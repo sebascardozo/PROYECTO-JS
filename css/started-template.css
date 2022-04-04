@@ -1,0 +1,10 @@
+.started-template {
+    padding: 40px 50px;
+    text-align: center;
+}
+.lead-center{
+    text-align: justify;
+}
+.oculto{display: none;}
+.visible{ display: inline;}
+
