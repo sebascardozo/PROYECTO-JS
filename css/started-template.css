@@ -8,3 +8,12 @@
 .oculto{display: none;}
 .visible{ display: inline;}
 
+.container-precio{
+    background-color: antiquewhite;
+    text-align: center;
+}
+.pedido{
+    padding-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
