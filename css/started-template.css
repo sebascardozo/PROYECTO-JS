@@ -5,6 +5,7 @@
 .lead-center{
     text-align: justify;
 }
+.text{ text-align:center;}
 .oculto{display: none;}
 .visible{ display: inline;}
 
@@ -14,6 +15,7 @@
 }
 .pedido{
     padding-top: 2rem;
+
     padding-left: 10rem;
     padding-right: 10rem;
 }
