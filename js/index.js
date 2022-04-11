@@ -55,7 +55,10 @@ const agregarProductoAlCarrito = (precioProducto,producto)=>{
         carrito.push({producto: producto,precio:precio, cantidad: 1});
     }
     renderizarElemento()
-}
+    console.log(carrito)
+    const guardarLocal  = (clave, valor) => { localStorage.setItem(clave, valor);
+}   
+guardarLocal("listaProductos", JSON.stringify(carrito));}
 
 const renderizarElemento = ()=>{
     listadoCarrito.innerHTML = '';
