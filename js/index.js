@@ -72,7 +72,7 @@ const renderizarElemento = ()=>{
                             Cantidad: ${carrito[index].cantidad}</p>`;
             sumaTotal = sumaTotal + carrito[index].precio * carrito[index].cantidad
             listadoCarrito.append(elemento);
-            total.innerText = `Total a pagar: ${sumaTotal}`
+            total.innerText = `Total a pagar: ${sumaTotal} $`
         }
     }
 }
