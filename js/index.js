@@ -92,12 +92,16 @@ const agregarProductoAlCarrito = (precioProducto,producto)=>{
     let precio = document.getElementById(precioProducto).innerText;
     let posicion = carrito.findIndex(elem => elem.producto === producto);
     console.log(posicion)
+
+    /*  SE APLICA OPERADOR TERNARIO (CODIGO ANTERIOR)
     if(posicion!=-1){
         carrito[posicion].cantidad += 1;
     }else{
         carrito.push({producto: producto,precio:precio, cantidad: 1});
-    }
-    renderizarElemento()
+    }*/
+posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: producto,precio:precio, cantidad: 1})) //OPERADOR TERNARIO
+
+   renderizarElemento()
     console.log(carrito)
     const guardarLocal  = (clave, valor) => { localStorage.setItem(clave, valor);
 }   
@@ -118,6 +122,7 @@ const renderizarElemento = ()=>{
             total.innerText = `Total a pagar: ${sumaTotal} $`
         }
     }
+    
 }
 let miFormulario = document.getElementById("formulario");
 
