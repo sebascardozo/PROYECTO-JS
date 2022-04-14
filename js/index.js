@@ -1,5 +1,5 @@
 Swal.fire({
-    title: 'Para recibir novedades pulsa OK',
+    title: '¿Quieres recibir novedades?',
     allowOutsideClick: () => {
       const popup = Swal.getPopup()
       popup.classList.remove('swal2-show')
