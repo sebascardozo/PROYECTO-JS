@@ -1,3 +1,18 @@
+Swal.fire({
+    title: 'Para recibir novedades pulsa OK',
+    allowOutsideClick: () => {
+      const popup = Swal.getPopup()
+      popup.classList.remove('swal2-show')
+      setTimeout(() => {
+        popup.classList.add('animate__animated', 'animate__headShake')
+      })
+      setTimeout(() => {
+        popup.classList.remove('animate__animated', 'animate__headShake')
+      }, 500)
+      return false
+    }
+  })
+
 // E- COMERCE 
 const muestra = ()=>{
     let elemento= document.getElementById('adicional');
@@ -16,8 +31,6 @@ const oculta = ()=>{
     document.getElementById('enlace').className= 'visible';
    
 }
-
-
 let btn1 = document.getElementById('btn-1');
 let btn2 = document.getElementById('btn-2');
 let btn3 = document.getElementById('btn-3');
@@ -28,23 +41,53 @@ let listadoCarrito = document.getElementById('carrito');
 let total = document.getElementById('total');
 let carrito = [];
 
-btn1.onclick = function(){
+btn1.addEventListener('click', () => {
     agregarProductoAlCarrito('precio-1','producto-1')
-}
-
-btn2.onclick = ()=>{
+        Swal.fire({
+            title: '¿Estas seguro de agregar este pedido?',
+            text: 'Haz click en el botón!',
+            icon: 'success',
+            confirmButtonText: 'Agregar'
+    })
+})
+ btn2.addEventListener('click', () => {
     agregarProductoAlCarrito('precio-2','producto-2')
-}
+        Swal.fire({
+            title: '¿Estas seguro de agregar este pedido?',
+            text: 'Haz click en el botón!',
+            icon: 'success',
+            confirmButtonText: 'Agregar'
+    })
+    })
 
-btn3.onclick = function(){
-    agregarProductoAlCarrito('precio-3','producto-3')
-}
-btn4.onclick = function(){
-    agregarProductoAlCarrito('precio-4','producto-4')
-}
-btn5.onclick = function(){
-    agregarProductoAlCarrito('precio-5','producto-5')
-}
+    btn3.addEventListener('click', () => {
+        agregarProductoAlCarrito('precio-3','producto-3')
+            Swal.fire({
+             title: '¿Estas seguro de agregar este pedido?',
+            text: 'Haz click en el botón!',
+             icon: 'success',
+             confirmButtonText: 'Agregar'
+      })
+   })
+ btn4.addEventListener('click', () => {
+            agregarProductoAlCarrito('precio-4','producto-4')
+            Swal.fire({
+            title: '¿Estas seguro de agregar este pedido?',
+            text: 'Haz click en el botón!',
+            icon: 'success',
+            confirmButtonText: 'Agregar'
+     })
+ })
+ btn5.addEventListener('click', () => {
+            agregarProductoAlCarrito('precio-5','producto-5')
+            Swal.fire({
+            title: '¿Estas seguro de agregar este pedido?',
+            text: 'Haz click en el botón!',
+            icon: 'success',
+            confirmButtonText: 'Agregar'
+     })
+ })
+
 const agregarProductoAlCarrito = (precioProducto,producto)=>{
     let precio = document.getElementById(precioProducto).innerText;
     let posicion = carrito.findIndex(elem => elem.producto === producto);
@@ -76,10 +119,12 @@ const renderizarElemento = ()=>{
         }
     }
 }
-let miFormulario      = document.getElementById("formulario");
+let miFormulario = document.getElementById("formulario");
+
 miFormulario.addEventListener("submit", validarFormulario);
 
 function validarFormulario(e){
+    Swal.fire('¿Quieres enviar tu pedido?')
     e.preventDefault();
     console.log("Pedido Enviado");    
 }
