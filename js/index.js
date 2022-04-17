@@ -13,7 +13,7 @@ Swal.fire({
     }
   })
 
-// E- COMERCE 
+// texto desplegable
 const muestra = ()=>{
     let elemento= document.getElementById('adicional');
     elemento.className= 'visible';
