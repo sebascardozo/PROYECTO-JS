@@ -105,6 +105,7 @@ posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: pro
     console.log(carrito)
     const guardarLocal  = (clave, valor) => { localStorage.setItem(clave, valor);
 }   
+
 guardarLocal("listaProductos", JSON.stringify(carrito));}
 
 const renderizarElemento = ()=>{
@@ -122,7 +123,9 @@ const renderizarElemento = ()=>{
             sumaTotal = sumaTotal + carrito[index].precio * carrito[index].cantidad
             listadoCarrito.append(elemento);
             total.innerText = `Total a pagar: ${sumaTotal} $`
+        
         }
+        
     }
     
 
@@ -131,7 +134,13 @@ let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", validarFormulario);
 
 function validarFormulario(e){
-    Swal.fire('¿Quieres enviar tu pedido?')
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Tu pedido ha sido enviado',
+        showConfirmButton: false,
+        timer: 1500
+      })
     e.preventDefault();
     console.log("Pedido Enviado");    
 }

@@ -53,7 +53,7 @@ function GeneraForm(){
         boton.setAttribute('style', "width:100px;margin: 10px 0px;padding: 10px;background:#F05133;color:#fff;border:solid 1px #000;");
         boton.setAttribute('onclick', "alert('Se envio el mensaje, Muchas Gracias!!!')");
 
-        titulo.innerHTML='<h1>Envianos un mensaje</h1>';
+        titulo.innerHTML='<h1>Mensaje</h1>';
         formulario.appendChild(titulo);
         formulario.appendChild(cajaTextNombres);
         formulario.appendChild(cajaTextApellidos);
