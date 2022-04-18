@@ -42,7 +42,7 @@ let total = document.getElementById('total');
 let carrito = [];
 
 btn1.addEventListener('click', () => {
-    agregarProductoAlCarrito('precio-1','producto-1')
+    agregarProductoAlCarrito('precio-1','Mila Clasica')
         Swal.fire({
             title: '¿Estas seguro de agregar este pedido?',
             text: 'Haz click en el botón!',
@@ -51,7 +51,7 @@ btn1.addEventListener('click', () => {
     })
 })
  btn2.addEventListener('click', () => {
-    agregarProductoAlCarrito('precio-2','producto-2')
+    agregarProductoAlCarrito('precio-2','Mila Napo')
         Swal.fire({
             title: '¿Estas seguro de agregar este pedido?',
             text: 'Haz click en el botón!',
@@ -61,7 +61,7 @@ btn1.addEventListener('click', () => {
     })
 
     btn3.addEventListener('click', () => {
-        agregarProductoAlCarrito('precio-3','producto-3')
+        agregarProductoAlCarrito('precio-3','Mila Molle')
             Swal.fire({
              title: '¿Estas seguro de agregar este pedido?',
             text: 'Haz click en el botón!',
@@ -70,7 +70,7 @@ btn1.addEventListener('click', () => {
       })
    })
  btn4.addEventListener('click', () => {
-            agregarProductoAlCarrito('precio-4','producto-4')
+            agregarProductoAlCarrito('precio-4','Mila Veggie')
             Swal.fire({
             title: '¿Estas seguro de agregar este pedido?',
             text: 'Haz click en el botón!',
@@ -79,7 +79,7 @@ btn1.addEventListener('click', () => {
      })
  })
  btn5.addEventListener('click', () => {
-            agregarProductoAlCarrito('precio-5','producto-5')
+            agregarProductoAlCarrito('precio-5','Mila Pollo')
             Swal.fire({
             title: '¿Estas seguro de agregar este pedido?',
             text: 'Haz click en el botón!',
@@ -110,8 +110,10 @@ guardarLocal("listaProductos", JSON.stringify(carrito));}
 const renderizarElemento = ()=>{
     listadoCarrito.innerHTML = '';
     let sumaTotal = 0;
+    /*  SE APLICA OPERADOR LOGICO AND (CODIGO ANTERIOR)
     if(carrito.length > 0){
-        console.log(carrito.length)
+        console.log(carrito.length)*/
+    carrito.length > 0 && console.log(carrito.length) //OPERADOR AND
         for (let index = 0; index < carrito.length; index++) {
             let elemento = document.createElement('div')
             elemento.innerHTML = `<p>
@@ -123,7 +125,7 @@ const renderizarElemento = ()=>{
         }
     }
     
-}
+
 let miFormulario = document.getElementById("formulario");
 
 miFormulario.addEventListener("submit", validarFormulario);
