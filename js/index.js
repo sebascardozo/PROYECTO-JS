@@ -116,9 +116,9 @@ const renderizarElemento = ()=>{
     carrito.length > 0 && console.log(carrito.length) //OPERADOR AND
         for (let index = 0; index < carrito.length; index++) {
             let elemento = document.createElement('div')
-            elemento.innerHTML = `<p>
+            elemento.innerHTML = `<p  class="text-white bg-dark">
                             Producto: ${carrito[index].producto}
-                            Cantidad: ${carrito[index].cantidad}</p>`;
+                            Cantidad: ${carrito[index].cantidad} <i class="fas fa-shopping-cart" ></i> </p>`;
             sumaTotal = sumaTotal + carrito[index].precio * carrito[index].cantidad
             listadoCarrito.append(elemento);
             total.innerText = `Total a pagar: ${sumaTotal} $`
