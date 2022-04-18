@@ -101,6 +101,7 @@ const agregarProductoAlCarrito = (precioProducto,producto)=>{
     }*/
 posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: producto,precio:precio, cantidad: 1})) //OPERADOR TERNARIO
 
+
    renderizarElemento()
     console.log(carrito)
     const guardarLocal  = (clave, valor) => { localStorage.setItem(clave, valor);
@@ -108,6 +109,8 @@ posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: pro
 
 guardarLocal("listaProductos", JSON.stringify(carrito));}
 
+
+ 
 const renderizarElemento = ()=>{
     listadoCarrito.innerHTML = '';
     let sumaTotal = 0;
