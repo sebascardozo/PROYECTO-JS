@@ -1,17 +1,68 @@
 Swal.fire({
-    title: '¿Quieres recibir novedades?',
-    allowOutsideClick: () => {
-      const popup = Swal.getPopup()
-      popup.classList.remove('swal2-show')
-      setTimeout(() => {
-        popup.classList.add('animate__animated', 'animate__headShake')
-      })
-      setTimeout(() => {
-        popup.classList.remove('animate__animated', 'animate__headShake')
-      }, 500)
-      return false
-    }
-  })
+	title: '¡Te estabamos esperando!',
+	text:'¿Cómo nos conociste?',
+	// html:
+	icon: 'question',
+	confirmButtonText: 'seleccionar',
+	footer:  'Gracias por contestar!!' ,
+	// width:
+	// padding:
+	// background:
+	// grow:
+	// backdrop:
+	// timer:
+	// timerProgressBar:
+	// toast:
+	// position:
+	// allowOutsideClick:
+	// allowEscapeKey:
+	// allowEnterKey:
+	// stopKeydownPropagation:
+
+	 input:'select',
+	inputPlaceholder:'Elije una opción',
+	inputValue: '',
+	inputOptions: {
+        Facebook: 'Facebook',
+        twitter: 'Twitter',
+        Instagram: 'Instagram',
+    } 
+	
+	//  customClass:
+	// 	container:
+	// 	popup:
+	// 	header:
+	// 	title:
+	// 	closeButton:
+	// 	icon:
+	// 	image:
+	// 	content:
+	// 	input:
+	// 	actions:
+	// 	confirmButton:
+	// 	cancelButton:
+	// 	footer:	
+
+	// showConfirmButton:
+	// confirmButtonColor:
+	// confirmButtonAriaLabel:
+
+	// showCancelButton:
+	// cancelButtonText:
+	// cancelButtonColor:
+	// cancelButtonAriaLabel:
+	
+	// buttonsStyling:
+	// showCloseButton:
+	// closeButtonAriaLabel:
+
+
+	// imageUrl:
+	// imageWidth:
+	// imageHeight:
+	// imageAlt:
+});
+
 
 // texto desplegable
 const muestra = ()=>{
@@ -31,6 +82,9 @@ const oculta = ()=>{
     document.getElementById('enlace').className= 'visible';
    
 }
+let clearTrash = document.getElementById("vaciarCarrito");
+
+
 let btn1 = document.getElementById('btn-1');
 let btn2 = document.getElementById('btn-2');
 let btn3 = document.getElementById('btn-3');
@@ -110,7 +164,13 @@ posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: pro
 guardarLocal("listaProductos", JSON.stringify(carrito));}
 
 
+
+vaciarCarrito.addEventListener('click', () => {
+    localStorage.removeItem("listaProductos");
  
+} )
+
+
 const renderizarElemento = ()=>{
     listadoCarrito.innerHTML = '';
     let sumaTotal = 0;
@@ -126,10 +186,16 @@ const renderizarElemento = ()=>{
             sumaTotal = sumaTotal + carrito[index].precio * carrito[index].cantidad
             listadoCarrito.append(elemento);
             total.innerText = `Total a pagar: ${sumaTotal} $`
+
         
         }
         
+        
+        
     }
+
+
+ 
     
 
 let miFormulario = document.getElementById("formulario");
