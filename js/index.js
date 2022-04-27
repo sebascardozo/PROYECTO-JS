@@ -98,49 +98,49 @@ let carrito = [];
 btn1.addEventListener('click', () => {
     agregarProductoAlCarrito('precio-1','Mila Clasica')
         Swal.fire({
-            title: '¿Estas seguro de agregar este pedido?',
+            title: 'Pruducto agregado',
             text: 'Haz click en el botón!',
             icon: 'success',
-            confirmButtonText: 'Agregar'
+            confirmButtonText: 'Seguir'
     })
 })
  btn2.addEventListener('click', () => {
     agregarProductoAlCarrito('precio-2','Mila Napo')
-        Swal.fire({
-            title: '¿Estas seguro de agregar este pedido?',
-            text: 'Haz click en el botón!',
-            icon: 'success',
-            confirmButtonText: 'Agregar'
-    })
-    })
+    Swal.fire({
+        title: 'Pruducto agregado',
+        text: 'Haz click en el botón!',
+        icon: 'success',
+        confirmButtonText: 'Seguir'
+})
+})
 
     btn3.addEventListener('click', () => {
         agregarProductoAlCarrito('precio-3','Mila Molle')
             Swal.fire({
-             title: '¿Estas seguro de agregar este pedido?',
-            text: 'Haz click en el botón!',
-             icon: 'success',
-             confirmButtonText: 'Agregar'
+                title: 'Pruducto agregado',
+                text: 'Haz click en el botón!',
+                icon: 'success',
+                confirmButtonText: 'Seguir'
       })
    })
  btn4.addEventListener('click', () => {
             agregarProductoAlCarrito('precio-4','Mila Veggie')
             Swal.fire({
-            title: '¿Estas seguro de agregar este pedido?',
-            text: 'Haz click en el botón!',
-            icon: 'success',
-            confirmButtonText: 'Agregar'
+                title: 'Pruducto agregado',
+                text: 'Haz click en el botón!',
+                icon: 'success',
+                confirmButtonText: 'Seguir'
      })
  })
  btn5.addEventListener('click', () => {
             agregarProductoAlCarrito('precio-5','Mila Pollo')
             Swal.fire({
-            title: '¿Estas seguro de agregar este pedido?',
-            text: 'Haz click en el botón!',
-            icon: 'success',
-            confirmButtonText: 'Agregar'
-     })
- })
+                title: 'Pruducto agregado',
+                text: 'Haz click en el botón!',
+                icon: 'success',
+                confirmButtonText: 'Seguir'
+        })
+    })
 
 const agregarProductoAlCarrito = (precioProducto,producto)=>{
     let precio = document.getElementById(precioProducto).innerText;
