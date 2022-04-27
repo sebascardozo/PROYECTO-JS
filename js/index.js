@@ -167,8 +167,10 @@ guardarLocal("listaProductos", JSON.stringify(carrito));}
 
 vaciarCarrito.addEventListener('click', () => {
     localStorage.removeItem("listaProductos");
- 
-} )
+    listadoCarrito.innerHTML = '';
+    total.innerText = '';
+} 
+)
 
 
 const renderizarElemento = ()=>{
