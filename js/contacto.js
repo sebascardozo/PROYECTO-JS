@@ -1,65 +1,48 @@
-function GeneraForm(){
 
-    let formulario=document.createElement("form");
+const options = {
+    method: 'POST',
+    body: JSON.stringify({
+        title: 'Sugerencias',
+        body: 'Post de prueba',
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    }}
 
-    let titulo=document.createElement("label");
-
-    let cajaTextNombres=document.createElement("input");
-
-
-    let cajaTextApellidos=document.createElement("input");
-
-
-    let cajaTextEmail=document.createElement("input");
-
-
-    let cajaTextAsunto=document.createElement("input");
-
-
-    let cajaTextMensaje=document.createElement("textarea");
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
 
 
-    let boton=document.createElement("input");
 
+//= Mismo ejemplo obteniendo los datos desde un formulario.
+let nombre = document.getElementById('nombre');
+let correo = document.getElementById('correo');
+let mensaje = document.getElementById('mensaje');
+let buscar = document.getElementById('buscar');
+let resultado = document.getElementById('resultado');
 
-        formulario.setAttribute('method', "post");
-        formulario.setAttribute('action', "");
-        formulario.setAttribute('style', "width:300px;margin: 0px auto");
+buscar.onclick=() => {
+    let datos = {
+        nombre: nombre.value,
+        mensaje: mensaje.value,
+        correo:correo.value,
+        userId: 1,
+    };
 
-
-        cajaTextNombres.setAttribute('type', "text");
-        cajaTextNombres.setAttribute('placeholder', "Nombre ");
-        cajaTextNombres.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
-
-        cajaTextApellidos.setAttribute('type', "text");
-        cajaTextApellidos.setAttribute('placeholder', "Apellidos");
-        cajaTextApellidos.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
-
-    
-        cajaTextEmail.setAttribute('type', "text");
-        cajaTextEmail.setAttribute('placeholder', "Email");
-        cajaTextEmail.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
-
-        cajaTextAsunto.setAttribute('type', "text");
-        cajaTextAsunto.setAttribute('placeholder', "Asunto");
-        cajaTextAsunto.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
-
-
-        cajaTextMensaje.setAttribute('placeholder', "Comentario");
-        cajaTextMensaje.setAttribute('style', "width:100%;height:200px;margin: 10px 0px;padding: 5px");
-
-    boton.setAttribute('type', "button");
-        boton.setAttribute('value', "Enviar");
-        boton.setAttribute('style', "width:100px;margin: 10px 0px;padding: 10px;background:#F05133;color:#fff;border:solid 1px #000;");
-        boton.setAttribute('onclick', "alert('Se envio el mensaje, Muchas Gracias!!!')");
-
-        titulo.innerHTML='<h1>Mensaje</h1>';
-        formulario.appendChild(titulo);
-        formulario.appendChild(cajaTextNombres);
-        formulario.appendChild(cajaTextApellidos);
-        formulario.appendChild(cajaTextEmail);
-        formulario.appendChild(cajaTextAsunto);
-        formulario.appendChild(cajaTextMensaje);
-        formulario.appendChild(boton);
-        document.getElementById('ContentFormulario').appendChild(formulario);			
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(datos),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }}
+    fetch('https://jsonplaceholder.typicode.com/posts', options)
+        .then((response) => response.json())
+        .then((data) => {
+            resultado.innerHTML = `Tu sugerencia fue enviada, gracias!!`;
+        })
+        .catch( error => {
+            resultado.innerHTML = `Hubo un error: ${error}`;
+        })
 }

@@ -1,24 +1,9 @@
 Swal.fire({
 	title: '¡Te estabamos esperando!',
 	text:'¿Cómo nos conociste?',
-	// html:
 	icon: 'question',
 	confirmButtonText: 'seleccionar',
 	footer:  'Gracias por contestar!!' ,
-	// width:
-	// padding:
-	// background:
-	// grow:
-	// backdrop:
-	// timer:
-	// timerProgressBar:
-	// toast:
-	// position:
-	// allowOutsideClick:
-	// allowEscapeKey:
-	// allowEnterKey:
-	// stopKeydownPropagation:
-
 	 input:'select',
 	inputPlaceholder:'Elije una opción',
 	inputValue: '',
@@ -27,40 +12,6 @@ Swal.fire({
         twitter: 'Twitter',
         Instagram: 'Instagram',
     } 
-	
-	//  customClass:
-	// 	container:
-	// 	popup:
-	// 	header:
-	// 	title:
-	// 	closeButton:
-	// 	icon:
-	// 	image:
-	// 	content:
-	// 	input:
-	// 	actions:
-	// 	confirmButton:
-	// 	cancelButton:
-	// 	footer:	
-
-	// showConfirmButton:
-	// confirmButtonColor:
-	// confirmButtonAriaLabel:
-
-	// showCancelButton:
-	// cancelButtonText:
-	// cancelButtonColor:
-	// cancelButtonAriaLabel:
-	
-	// buttonsStyling:
-	// showCloseButton:
-	// closeButtonAriaLabel:
-
-
-	// imageUrl:
-	// imageWidth:
-	// imageHeight:
-	// imageAlt:
 });
 
 
@@ -164,13 +115,13 @@ posicion!=-1 ? ( carrito[posicion].cantidad += 1) : (carrito.push({producto: pro
 guardarLocal("listaProductos", JSON.stringify(carrito));}
 
 
-
 vaciarCarrito.addEventListener('click', () => {
     localStorage.removeItem("listaProductos");
     listadoCarrito.innerHTML = '';
     total.innerText = '';
 } 
 )
+
 
 
 const renderizarElemento = ()=>{
@@ -205,6 +156,7 @@ let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", validarFormulario);
 
 function validarFormulario(e){
+    
     Swal.fire({
         position: 'top-center',
         icon: 'success',
@@ -213,8 +165,6 @@ function validarFormulario(e){
         timer: 1500
       })
     e.preventDefault();
+    
     console.log("Pedido Enviado");    
 }
-
-
-

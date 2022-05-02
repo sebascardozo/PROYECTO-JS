@@ -26,6 +26,24 @@ button{
 background-color:rgb(15, 89, 248);
 }
 
+
+ /*Contacto*/
+
+
+.icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
+
+  .button-align{
+      text-align: center;
+  }
+
+  .margin-right{
+    margin-right: 3%;
+}
 /*FOOTER*/
 .footer {
     padding-top: 1rem;
